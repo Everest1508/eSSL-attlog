@@ -50,7 +50,7 @@ async def health_check():
     return {
         "status": "healthy",
         "version": "1.0.0",
-        "data_dir": os.path.exists("data"),
+        "db": os.path.exists("data/essl.db"),
         "port": os.getenv("PORT", "8000"),
         "devices_detected": len(scanner.list_devices())
     }
